@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+Funcionalidades
+Consulta de CEP utilizando a AwesomeAPI CEP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Obtenção de previsão do tempo usando a Open-Meteo API
 
-## Available Scripts
+Exibição organizada das informações de endereço e clima
 
-In the project directory, you can run:
+Interface responsiva e amigável
 
-### `npm start`
+Tratamento de erros e feedback ao usuário
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pré-requisitos
+Node.js (versão 16 ou superior)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm ou yarn
 
-### `npm test`
+Conta de desenvolvedor não é necessária (APIs públicas)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instalação
+Clone o repositório:
 
-### `npm run build`
+bash
+git clone https://github.com/seu-usuario/cep-weather-app.git
+cd cep-weather-app
+Instale as dependências:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+npm install
+# ou
+yarn install
+Inicie o servidor de desenvolvimento:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+npm start
+# ou
+yarn start
+A aplicação estará disponível em http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Estrutura do Projeto
+src/
+├── components/       # Componentes React
+│   ├── AddressInfo.jsx  # Exibe informações de endereço
+│   ├── WeatherInfo.jsx  # Exibe previsão do tempo
+│   ├── CepForm.jsx      # Formulário de entrada de CEP
+│   └── Loading.jsx      # Indicador de carregamento
+├── services/         # Serviços de API
+│   ├── cepService.js    # Serviço de consulta de CEP
+│   └── weatherService.js # Serviço de previsão do tempo
+├── App.js            # Componente principal
+├── App.css           # Estilos principais
+└── index.js          # Ponto de entrada da aplicação
+Como usar
+Na página inicial, digite um CEP válido (apenas números) no campo de entrada.
 
-### `npm run eject`
+Clique em "Buscar" para enviar a requisição.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A aplicação irá:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Buscar informações de endereço na AwesomeAPI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Usar as coordenadas (latitude/longitude) para obter a previsão do tempo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Exibir ambas as informações em cards separados
 
-## Learn More
+APIs utilizadas
+AwesomeAPI CEP
+Endpoint: https://cep.awesomeapi.com.br/json/{cep}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Retorna informações completas de endereço a partir de um CEP
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Documentação: https://cep.awesomeapi.com.br/
 
-### Code Splitting
+Open-Meteo Weather API
+Endpoint: https://api.open-meteo.com/v1/forecast
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Retorna dados meteorológicos atuais baseados em coordenadas geográficas
 
-### Analyzing the Bundle Size
+Documentação: https://open-meteo.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Personalização
+Você pode personalizar a aplicação modificando:
 
-### Making a Progressive Web App
+Estilos: Edite o arquivo App.css ou adicione novos arquivos CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Componentes: Modifique os componentes em /components para alterar a aparência ou comportamento
 
-### Advanced Configuration
+Serviços: Ajuste os serviços em /services para mudar a lógica de chamada à API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Melhorias futuras
+Adicionar histórico de consultas recentes
 
-### Deployment
+Implementar autocompletar para CEPs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Adicionar mais detalhes meteorológicos (previsão para próximos dias)
 
-### `npm run build` fails to minify
+Internacionalização (i18n)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Testes unitários e de integração
+
+Contribuição
+Contribuições são bem-vindas! Siga os passos:
+
+Faça um fork do projeto
+
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+
+Push para a branch (git push origin feature/AmazingFeature)
+
+Abra um Pull Request
+
+Licença
+Distribuído sob a licença MIT. Veja LICENSE para mais informações.
+
